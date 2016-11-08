@@ -1,0 +1,10 @@
+Johnny B. Goode|5
+symphony 9|10
+hello|6
+Let it be |7
+Great song|10
+bad song|1
+Breath|9
+Trash|2
+The show must go on|9
+Amazing song|8
