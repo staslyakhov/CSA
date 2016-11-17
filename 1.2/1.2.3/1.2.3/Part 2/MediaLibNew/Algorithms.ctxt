@@ -1,0 +1,11 @@
+#BlueJ class context
+comment0.params=
+comment0.target=void\ main()
+comment1.params=topTenSongs
+comment1.target=java.lang.String\ bestSongs(Song[])
+comment2.params=topTenSongs
+comment2.target=java.lang.String\ worstSongs(Song[])
+comment3.params=topTenSongs
+comment3.target=void\ countSecond(Song[])
+comment3.text=\ \ public\ static\ String\ countSecond(Song[]\ topTenSongs){\r\n\ \ \ \ \ \ \ \ int\ index\ \=\ 0;\r\n\ \ \ \ \ \ \ \ int\ bestSoFar\ \=\ topTenSongs[0].getRate();\r\n\ \ \ \ \ \ \ \ int\ secondBest\ \=\ bestSoFar\ +1\ ;\r\n\ \ \ \ \ \ \ \ ArrayList\ second\ \=\ new\ ArrayList();\r\n\ \ \ \ \ \ \ \ for\ (int\ i\ \=\ 0;\ i\ <\=\ topTenSongs.length-1;\ i++){\r\n\ \ \ \ \ \ \ \ \ \ \ \ if\ (topTenSongs[i].getRate()\ <\ bestSoFar)\ {\r\n\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ bestSoFar\ \=\ topTenSongs[i].getRate();\r\n\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ index\ \=\ i;\r\n\ \ \ \ \ \ \ \ \ \ \ \ }\r\n\ \ \ \ \ \ \ \ }\r\n\ \ \ \ \ \ \ \ for(int\ i\ \=\ 0;\ i\ <\=\ topTenSongs.length-1;\ i++){\r\n\ \ \ \ \ \ \ \ \ \ \ \ if\ (topTenSongs[i].getRate()\ <\=\ secondBest\ &&\ topTenSongs[i].getRate()\ >\ bestSoFar\ \ )\ {\r\n\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ if(topTenSongs[i].getRate()\ <\ secondBest){\r\n\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ second.clear();\r\n\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }\ \ \ \ \r\n\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ secondBest\ \=\ topTenSongs[i].getRate();\r\n\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ index\ \=\ i;\r\n\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ second.add(topTenSongs[i].getTitle());\r\n\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \r\n\ \ \ \ \ \ \ \ \ \ \ \ }\r\n\ \ \ \ \ \ \ \ }\r\n\ \ \ \ \ \ \ \ String\ format\ \=\ second.toString()\r\n\ \ \ \ \ \ \ \ .replace("[",\ "")\ \r\n\ \ \ \ \ \ \ \ .replace("]",\ "")\ \r\n\ \ \ \ \ \ \ \ .trim();\ \ \ \ \ \r\n\ \ \ \ \ \ \ \ return\ format;\r\n
+numComments=4

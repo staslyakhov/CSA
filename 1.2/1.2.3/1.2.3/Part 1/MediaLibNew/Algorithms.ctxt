@@ -1,0 +1,8 @@
+#BlueJ class context
+comment0.params=
+comment0.target=void\ main()
+comment1.params=topTenSongs
+comment1.target=java.lang.String\ bestSongs(Song[])
+comment2.params=topTenSongs
+comment2.target=java.lang.String\ worstSongs(Song[])
+numComments=3
