@@ -11,27 +11,29 @@ public class Algorithms
 { 
     public static void main(){
        Song[] topTenSongs =  {
-            new Song("The Twist",4),
-            new Song("Smooth",3),
-            new Song("Mack the Knife",3),
+            new Song("The Twist",2),
+            new Song("Smooth",2),
+            new Song("Mack the Knife",2),
             new Song("How do I live",7),
+            
             new Song("Party rock anthem",4),
             new Song("I gotta feeling",2),
             new Song("Macarena",6),
-            new Song("Physical",10),
+            new Song("Physical",4),
             new Song("You light up my life",2),
             new Song("Hey Jude",2)
                              };
                              
-        for (Song song : topTenSongs){
+       /* for (Song song : topTenSongs){
             System.out.print("Title: " + song.getTitle());
             System.out.println(". Rating: " + song.getRate());
-        }
+        }*/
         ///
         ///
-       System.out.println("Best song: " + bestSongs(topTenSongs));
-       System.out.println("Worst song: " + worstSongs(topTenSongs));
+     //  System.out.println("Best song: " + bestSongs(topTenSongs));
+      // System.out.println("Worst song: " + worstSongs(topTenSongs));
        countSecond(topTenSongs);
+       Arrange(topTenSongs);
     }
     public static String bestSongs(Song[] topTenSongs){
         int index = 0;
@@ -55,7 +57,7 @@ public class Algorithms
         }
         return topTenSongs[index].getTitle();
     }
-  /*  public static String countSecond(Song[] topTenSongs){
+    /*  public static String countSecond(Song[] topTenSongs){
         int index = 0;
         int bestSoFar = topTenSongs[0].getRate();
         int secondBest = bestSoFar +1 ;
@@ -87,24 +89,39 @@ public class Algorithms
     public static void countSecond(Song[] topTenSongs){
         int bestSoFar = topTenSongs[0].getRate();
         int secondBest = (bestSoFar * 10);
-        for (Song secondNum : topTenSongs){
+        for (Song secondNum : topTenSongs) {
             if (secondNum.getRate() < bestSoFar) {
                 bestSoFar = secondNum.getRate();
             }
-           // System.out.println(bestSoFar);
         }
-        System.out.println(bestSoFar);
-        for (Song secondNum : topTenSongs){
+        for (Song secondNum : topTenSongs) {
             if (secondNum.getRate() < secondBest && secondNum.getRate() > bestSoFar  ) {
                 secondBest = secondNum.getRate();
             }    
-            System.out.println(secondBest);
         } 
-        System.out.println(secondBest);
-        for (Song secondNum : topTenSongs){
-            if (secondNum.getRate() == secondBest){
-                System.out.println(secondNum.getTitle());
+        for (Song secondNum : topTenSongs) {
+            if (secondNum.getRate() == secondBest) {
+                System.out.println("Second best song(s)" + secondNum.getTitle());
             }
         }
+    }
+    public static void Arrange(Song[] topTenSongs){
+        int index1 = 0;
+        for (int i = 0; i <= topTenSongs.length -1; i++ ){
+            if(topTenSongs[i] == null){
+                index1 = i;
+            }
+        }
+        for (int index = index1; index <= topTenSongs.length -2; index++ ){
+            topTenSongs[index] = topTenSongs[index+1];
+        }
+        topTenSongs[topTenSongs.length-1] = null;
+         for (Song song : topTenSongs){
+            if (song != null) {
+                System.out.print("Title: " + song.getTitle());
+                System.out.println(". Rating: " + song.getRate());
+            }
+        }
+    
     }
 }
