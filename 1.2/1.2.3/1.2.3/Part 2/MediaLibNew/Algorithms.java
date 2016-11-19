@@ -21,25 +21,28 @@ public class Algorithms
             new Song("Macarena",6),
             new Song("Physical",4),
             new Song("You light up my life",2),
-            new Song("Hey Jude",2)
+            new Song("Hey Jude",2),
+    
                              };
         System.out.println("---Before---");                   
-        for (Song song : topTenSongs){
-            if (song != null){
-              System.out.print("Title: " + song.getTitle());
-                System.out.println(". Rating: " + song.getRate());
+        for (int i = 0; i <= topTenSongs.length -1; i++){
+            if (topTenSongs[i] != null) {
+                System.out.print("" + i);
+                System.out.println("  " + topTenSongs[i].getTitle());
+                
             }
-             else{
-                System.out.println("null ");
+            else{
+                System.out.print("" + i);
+                System.out.println("  null");
             }
-        }
+        }   
         ///
         ///
-     //  System.out.println("Best song: " + bestSongs(topTenSongs));
+      // System.out.println("Best song: " + bestSongs(topTenSongs));
       // System.out.println("Worst song: " + worstSongs(topTenSongs));
-       //countSecond(topTenSongs);
-       //arrange(topTenSongs);
-        insert(topTenSongs, new Song("TEST",7));
+      // countSecond(topTenSongs);
+       // arrange(topTenSongs, "Macarena");
+        insert(topTenSongs, new Song("Time",7),1);
     }
     public static String bestSongs(Song[] topTenSongs){
         int index = 0;
@@ -111,9 +114,14 @@ public class Algorithms
             }
         }
     }
-    public static void arrange(Song[] topTenSongs){
+    public static void arrange(Song[] topTenSongs, String title){
         System.out.println("---After---");
         int index1 = 0;
+        for (int i = 0; i <= topTenSongs.length -1; i++){
+            if(title.equals(topTenSongs[i].getTitle())){
+                topTenSongs[i] = null;
+            }
+        }
         for (int i = 0; i <= topTenSongs.length -1; i++ ){
             if(topTenSongs[i] == null){
                 index1 = i;
@@ -123,34 +131,43 @@ public class Algorithms
             topTenSongs[index] = topTenSongs[index+1];
         }
         topTenSongs[topTenSongs.length-1] = null;
-         for (Song song : topTenSongs){
-            if (song != null) {
-                System.out.print("Title: " + song.getTitle());
-                System.out.println(". Rating: " + song.getRate());
+         for (int i = 0; i <= topTenSongs.length -1; i++){
+            if (topTenSongs[i] != null) {
+                System.out.print("" + i);
+                System.out.println("  " + topTenSongs[i].getTitle());
+                
             }
             else{
-                System.out.println("null ");
+                System.out.print("" + i);
+                System.out.println("  null");
             }
         }
     
     }
-        public static void insert(Song[] topTenSongs, Song insert){
+        public static void insert(Song[] topTenSongs, Song insert, int index){
         System.out.println("---After---");
         int index1 = 0;
         for (int i = 0; i <= topTenSongs.length -1; i++ ){
             if(topTenSongs[i] == null){
                 index1 = i;
-                break;
             }
         }
-            topTenSongs[index1] = insert;
-         for (Song song : topTenSongs){
-            if (song != null) {
-                System.out.print("Title: " + song.getTitle());
-                System.out.println(". Rating: " + song.getRate());
+        for (int i = index1; i <= topTenSongs.length -2; i++ ){
+            topTenSongs[i] = topTenSongs[i+1];
+        }
+        topTenSongs[topTenSongs.length-1] = null;
+        for (int i  = topTenSongs.length - 2;  i >= index; i-- ){
+            topTenSongs[i+1] = topTenSongs[i];
+        }
+        topTenSongs[index] = insert;
+         for (int i = 0; i <= topTenSongs.length -1; i++){
+            if (topTenSongs[i] != null) {
+                System.out.print("" + i);
+                System.out.println("  " + topTenSongs[i].getTitle());
+                
             }
             else{
-                System.out.println("null ");
+                System.out.println("null");
             }
         }
     
