@@ -1,9 +1,0 @@
-#BlueJ class context
-comment0.params=songs\ target
-comment0.target=int\ findTitle(Song[],\ java.lang.String)
-comment1.params=songs\ compare
-comment1.target=int\ getIndexLastDiscount(Song[],\ double)
-comment2.params=songs
-comment2.target=int\ getIndexLastTitle(Song[])
-comment2.text=\r\n\ Search\ through\ all\ songs,\ checking\ for\ blank\ titles.\r\n\ If\ blank\ title\ is\ found,\ return\ -1\ to\ indicate\ an\ error.\r\n\ If\ all\ titles\ are\ "well-defined",\ return\ the\ last\ index\ in\ the\ array.\r\n
-numComments=3

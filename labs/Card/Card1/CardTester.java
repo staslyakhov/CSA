@@ -7,7 +7,7 @@
  */
 public class CardTester
 {
-    public static void main() {
+    public static void main(String[] args) {
         Card[] arr = new Card[] { new Card("queen", "spades", 10),
                                   new Card("queen", "spades", 10),
                                   new Card("ace", "hearts", 10) }; 
