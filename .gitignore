@@ -25,7 +25,6 @@
 *.log
 *.sql
 *.sqlite
-*.swp
 
 # OS generated files #
 ######################
@@ -36,6 +35,22 @@
 .Trashes
 ehthumbs.db
 Thumbs.db
+
 #Bluej
 *.ctxt
 *.bluej
+
+#eclipse
+.metadata
+bin/
+tmp/
+*.tmp
+*.bak
+*.swp
+*~.nib
+local.properties
+.settings/
+.loadpath
+.recommenders
+.project
+.classpath

@@ -24,6 +24,5 @@ public class CardTester
         System.out.println("");
         System.out.println(arr[0]);
         System.out.println(arr[0].toString());
-            
     }
 }
