@@ -19,6 +19,7 @@ public class Deck
             }
         }      
         size = cards.size();
+        shuffle(cards);
     }
 
     public boolean isEmpty() {
@@ -63,5 +64,24 @@ public class Deck
     }
     public int getSize() {
         return size;
+    }
+
+    /**
+     * @return the cards
+     */
+    public List<Card> getCards() {
+        return cards;
+    }
+
+    public void shuffle(List<Card> values) {
+        Card tmp;
+        int r = 0;
+        Random ran = new Random();
+        for (int k=getSize()-1; k>0; k-- ){
+            r = ran.nextInt(k+1);
+            tmp = values.get(k);
+            values.set(k,values.get(r));
+            values.set(r,tmp);
+        }
     }
 }
