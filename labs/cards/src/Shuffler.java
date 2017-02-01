@@ -10,7 +10,7 @@ public class Shuffler {
      * The number of consecutive shuffle steps to be performed in each call
      * to each sorting procedure.
      */
-    private static final int SHUFFLE_COUNT = 7;
+    private static final int SHUFFLE_COUNT = 8;
 
     /**
      * Tests shuffling methods.
@@ -19,7 +19,7 @@ public class Shuffler {
     public static void main(String[] args) {
         System.out.println("Results of " + SHUFFLE_COUNT +
                                  " consecutive perfect shuffles:");
-        int[] values1 = {0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39,40,41,42,43,44,45,46,47,48,49,50,51};
+        int[] values1 = {0,1,2,3,4};
         for (int j = 1; j <= SHUFFLE_COUNT; j++) {
             perfectShuffle(values1);
             System.out.print("  " + j + ":");
@@ -87,8 +87,8 @@ public class Shuffler {
         int[] arrayCopy2;
         arrayCopy1 = Arrays.copyOfRange(values, 0, values.length/2 + random);
         arrayCopy2 = Arrays.copyOfRange(values, values.length/2 + random, values.length);
-        int sizeOne=arrayCopy1.length;
-        int sizeTwo=arrayCopy2.length;
+        int sizeOne = arrayCopy1.length;
+        int sizeTwo = arrayCopy2.length;
         int i=0;
         int chance=1;
         while (sizeOne > 0 || sizeTwo > 0) {
@@ -99,8 +99,7 @@ public class Shuffler {
             if (merge < chance){
                 values[i] = arrayCopy1[arrayCopy1.length - sizeOne];
                 sizeOne--;
-            }
-            else{ 
+            } else { 
                 values[i] = arrayCopy2[arrayCopy2.length - sizeTwo];
                 sizeTwo--;
             }
@@ -120,13 +119,13 @@ public class Shuffler {
      * @param values is an array of integers simulating cards to be shuffled.
      */
     public static void selectionShuffle(int[] values) {
-        int tmp =0;
+        int tmp = 0;
         int r = 0;
         Random ran = new Random();
         for (int k=51; k>0; k-- ){
             r = ran.nextInt(k+1);
             tmp = values[k];
-            values[k]=values[r];
+            values[k] = values[r];
             values[r] = tmp;
         }
     }

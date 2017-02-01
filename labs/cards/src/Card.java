@@ -19,13 +19,13 @@ public class Card
     }
     
     //Returns true if cards are identical
-    public boolean testCard(Card card1, Card card2) {
-        return (card1.getRank().equals(card2.getRank()) && card1.getSuit().equals(card2.getSuit()) && card1.getPoint() == card2.getPoint());
+    public boolean testCard(Card card2) {
+        return (this.getRank().equals(card2.getRank()) && this.getSuit().equals(card2.getSuit()) && this.getPoint() == card2.getPoint());
     }
 
     @Override
     public String toString() {
-        return rank + " of " + suit + "(point value = " + point + ")";
+        return rank + " of " + suit + " (point value = " + point + ")";
     }
 
     //Rank accessor
