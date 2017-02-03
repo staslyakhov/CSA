@@ -19,7 +19,7 @@ public class Shuffler {
     public static void main(String[] args) {
         System.out.println("Results of " + SHUFFLE_COUNT +
                                  " consecutive perfect shuffles:");
-        int[] values1 = {0,1};
+        int[] values1 = {0,1,2,3,4,5,6,7,8,9,10,11,12,13,14};
         for (int j = 1; j <= SHUFFLE_COUNT; j++) {
             //perfectShuffle(values1);
             System.out.print("  " + j + ":");

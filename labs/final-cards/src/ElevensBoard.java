@@ -57,7 +57,7 @@ public class ElevensBoard extends Board {
         if (containspairsum11(selectedCards) && selectedCards.size() == 2){
             return true;
         }
-        return containsJQK(selectedCards);
+        return (containsJQK(selectedCards) && selectedCards.size() == 3);
 	}
 
 	/**
