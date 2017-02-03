@@ -10,7 +10,7 @@ public class Shuffler {
      * The number of consecutive shuffle steps to be performed in each call
      * to each sorting procedure.
      */
-    private static final int SHUFFLE_COUNT = 8;
+    private static final int SHUFFLE_COUNT = 20;
 
     /**
      * Tests shuffling methods.
@@ -19,9 +19,9 @@ public class Shuffler {
     public static void main(String[] args) {
         System.out.println("Results of " + SHUFFLE_COUNT +
                                  " consecutive perfect shuffles:");
-        int[] values1 = {0,1,2,3,4};
+        int[] values1 = {0,1};
         for (int j = 1; j <= SHUFFLE_COUNT; j++) {
-            perfectShuffle(values1);
+            //perfectShuffle(values1);
             System.out.print("  " + j + ":");
             for (int k = 0; k < values1.length; k++) {
                 System.out.print(" " + values1[k]);
@@ -79,14 +79,12 @@ public class Shuffler {
     public static void realisticShuffle(int[] values) {
         Random ran = new Random();
         int merge = 0;
-        int random = (int)(ran.nextGaussian() * values.length/2 + 2);    
-        if (random > 20 || random < -20) {
+        int random = (int)(ran.nextGaussian() * values.length/2 );    
+        if (random > values.length/2 || random < -values.length/2) {
             random = 0;
         }
-        int[] arrayCopy1;
-        int[] arrayCopy2;
-        arrayCopy1 = Arrays.copyOfRange(values, 0, values.length/2 + random);
-        arrayCopy2 = Arrays.copyOfRange(values, values.length/2 + random, values.length);
+        int[] arrayCopy1 = Arrays.copyOfRange(values, 0, values.length/2 + random);
+        int[] arrayCopy2 = Arrays.copyOfRange(values, values.length/2 + random, values.length);
         int sizeOne = arrayCopy1.length;
         int sizeTwo = arrayCopy2.length;
         int i=0;
@@ -122,7 +120,7 @@ public class Shuffler {
         int tmp = 0;
         int r = 0;
         Random ran = new Random();
-        for (int k=51; k>0; k-- ){
+        for (int k=values.length-1; k>0; k-- ){
             r = ran.nextInt(k+1);
             tmp = values[k];
             values[k] = values[r];
