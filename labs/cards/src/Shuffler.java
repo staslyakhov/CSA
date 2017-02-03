@@ -120,7 +120,7 @@ public class Shuffler {
         int tmp = 0;
         int r = 0;
         Random ran = new Random();
-        for (int k=values.length-1; k>0; k-- ){
+        for (int k = values.length - 1; k > 0; k--){
             r = ran.nextInt(k+1);
             tmp = values[k];
             values[k] = values[r];
